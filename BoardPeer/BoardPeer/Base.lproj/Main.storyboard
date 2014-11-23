@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjk-dF-htt" userLabel="main image">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="I58-yu-GZ1" appends="YES" id="68m-RZ-Fgn"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rpE-Dd-LsA" userLabel="temp image">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7O-0f-kwV">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZD-Ub-uJZ">
+                                <rect key="frame" x="16" y="20" width="40" height="30"/>
+                                <state key="normal" title="Clean">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cleanScreen:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PZC-Gl-oWe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="mjk-dF-htt" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Ahg-Oj-zk3"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="rpE-Dd-LsA" secondAttribute="bottom" id="Cyr-Qq-3OA"/>
+                            <constraint firstAttribute="trailing" secondItem="rpE-Dd-LsA" secondAttribute="trailing" id="D6M-3q-xKu"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mjk-dF-htt" secondAttribute="bottom" id="MBz-Tz-UMe"/>
+                            <constraint firstAttribute="trailing" secondItem="y7O-0f-kwV" secondAttribute="trailing" id="YTe-oM-Pf0"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="y7O-0f-kwV" secondAttribute="bottom" id="avM-FX-won"/>
+                            <constraint firstItem="rpE-Dd-LsA" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="cIs-4W-LS9"/>
+                            <constraint firstItem="rpE-Dd-LsA" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="elk-NP-jCY"/>
+                            <constraint firstAttribute="trailing" secondItem="mjk-dF-htt" secondAttribute="trailing" id="hJ1-Yj-zpI"/>
+                            <constraint firstItem="mjk-dF-htt" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="kOb-rT-GGL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drawable" destination="A4t-sb-cye" id="Fga-Gh-akz"/>
+                        <outlet property="position" destination="y7O-0f-kwV" id="SLs-Ou-CV4"/>
+                        <outlet property="view" destination="kh9-bI-dsS" id="vCe-5G-KN5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="I58-yu-GZ1">
+                    <connections>
+                        <action selector="panReceived:" destination="vXZ-lx-hvc" id="0Pb-31-jYd"/>
+                    </connections>
+                </panGestureRecognizer>
+                <customObject id="A4t-sb-cye" customClass="Drawable">
+                    <connections>
+                        <outlet property="layout" destination="mjk-dF-htt" id="UJ6-yu-h70"/>
+                        <outlet property="tmpLayout" destination="rpE-Dd-LsA" id="OUq-5x-uau"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="277" y="421"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
